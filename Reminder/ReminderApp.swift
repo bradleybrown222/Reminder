@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct ReminderApp: App {
+    @StateObject var listViewModel: ListViewModel = ListViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ListView()
+            }
+            .environmentObject(listViewModel)
         }
     }
 }
